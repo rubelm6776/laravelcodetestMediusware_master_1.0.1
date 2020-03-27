@@ -14,10 +14,8 @@ window.Vue = require('vue');
 window.axios = require('axios');
 Vue.use(require('vue-resource'));
 Vue.component('data-component', require('./components/DataComponent.vue'));
-Vue.component('Codetestcomponent', require('./components/Codetestcomponent'));
 Vue.component('pagination', require('./components/PaginationComponent.vue'));
-// Vue.component('moment', require('moment'));
-// import moment from 'moment';
+
 import filter from './filter.js'
 const app = new Vue({
     el: '#historyData',
