@@ -21,7 +21,7 @@
                                 <select v-model="queryFiled"   @change="searchData()"  class="form-control">
                                     <option value="">All Group</option>
                                     <option v-for="group in groupData" :value="group.type">
-                                        {{group.type.toUpperCase()}}
+                                        {{group.type.replace('-', " ").toUpperCase()}}
                                     </option>
                                 </select>
                             </div>
@@ -44,7 +44,7 @@
 
                                 <tr v-show="bufferingpost.length"  v-for="(post, index) in bufferingpost" :key="post.id">
                                     <td>{{ post.group.name }}</td>
-                                    <td>{{ post.group.type }}</td>
+                                    <td>{{post.group.type.replace('-', " ") |capitalize }}</td>
                                     <td>
                                         <div class="media">
                                             <div class="media-left">

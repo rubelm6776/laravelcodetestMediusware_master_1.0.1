@@ -21602,6 +21602,12 @@ __WEBPACK_IMPORTED_MODULE_1_vue___default.a.filter('timeformate', function (arg)
     return __WEBPACK_IMPORTED_MODULE_0_moment___default()(arg).format("DD-MMM-YYYY hh:mm:ss a");
 });
 
+__WEBPACK_IMPORTED_MODULE_1_vue___default.a.filter('capitalize', function (value) {
+    if (!value) return '';
+    value = value.toString();
+    return value.charAt(0).toUpperCase() + value.slice(1);
+});
+
 /***/ }),
 /* 165 */
 /***/ (function(module, exports) {
@@ -35610,7 +35616,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       domProps: {
         "value": group.type
       }
-    }, [_vm._v("\n                                    " + _vm._s(group.type.toUpperCase()) + "\n                                ")])
+    }, [_vm._v("\n                                    " + _vm._s(group.type.replace('-', " ").toUpperCase()) + "\n                                ")])
   })], 2)])]), _vm._v(" "), _c('hr'), _vm._v(" "), _c('div', {
     staticClass: "table-responsive"
   }, [_c('table', {
@@ -35624,7 +35630,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         expression: "bufferingpost.length"
       }],
       key: post.id
-    }, [_c('td', [_vm._v(_vm._s(post.group.name))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(post.group.type))]), _vm._v(" "), _c('td', [_c('div', {
+    }, [_c('td', [_vm._v(_vm._s(post.group.name))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(_vm._f("capitalize")(post.group.type.replace('-', " "))))]), _vm._v(" "), _c('td', [_c('div', {
       staticClass: "media"
     }, [_c('div', {
       staticClass: "media-left"
